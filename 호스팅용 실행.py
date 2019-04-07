@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -30,7 +31,8 @@ async def on_message(message):
         await client.send_message(message.channel, "말 그대로 동전던지기 입니다. 확률은 50 : 50 입니다 \n명령어 : 동전던지기")
 
     if message.content.startswith("ㅅ 도움"):
-        await client.send_message(message.channel, "심심할 때 팀 나누는 용도로 쓰실 수 있습니다. \n예시 명령어 : W!팀 나누기 1 2 3 4/5 6 7 8")
+        await client.send_message(message.channel, "심심할 때 팀 나누는 용도로 쓰실 수 있습니다. \n예시 명령어 : W!팀 나누기 1 2 3 4/5 6 7 8")        
+       
 
-
-client.run('NTQ4MTM4ODg4OTcxOTQzOTM2.D1A_Eg.oZ2RDEtmiyrstbx2i23gvt-MMHc')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
